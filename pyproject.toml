@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools >= 51.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "Hi"
+version = "0.0.1"
+description = "Just saying hi"
+readme = "README.md"
+license = {file = "LICENSE"}
+authors = [
+    {name = "Furzmund", email="furz@mund.fake"},
+]
+maintainers = [{name = "your mom", email="your@mom.fake"}]
+keywords = ["python"]
+classifiers = [
+  "Programming Language :: Python"
+]
+requires-python = ">=3.8"
+dependencies = []
+[project.optional-dependencies]
+dev = [
+    "build==0.10.0",
+    "faker==17.0.0",
+    "ipdb==0.13.11",
+    "pip-tools==6.12.2",
+    "pre-commit==3.1.0",
+    "pytest-cov==4.0.0",
+    "pytest==7.2.1",
+    "vulture==2.7.0",
+]
+
+[project.urls]
+homepage = "https://example.com"
+documentation = "https://readthedocs.org"
+repository = "https://github.com/me/project"
+changelog = "https://github.com/me/project/blob/master/CHANGELOG.md"
+
+[project.scripts]
+hi = "main:main"
