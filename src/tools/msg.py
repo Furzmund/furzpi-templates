@@ -19,6 +19,7 @@ def in_range(min: int, max: int, val: int) -> bool:
     :param value: value to test
     :returns boolean
     """
+    assert min <= max, "Min must be less than or equal to max"
     return min <= val <= max
 
 
