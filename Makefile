@@ -22,7 +22,7 @@ test:
 	@pytest tests
 
 # Remove all untracked and ignored files/directories
-clean_all:
+clean-all:
 	@git clean -fx .
 
 build:
@@ -33,3 +33,6 @@ build:
 rebuild:
 	@git clean -fX .
 	@python -m build .
+
+remove-git:
+	@./remove_git.sh
