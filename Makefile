@@ -42,14 +42,14 @@ test:
 	@pytest tests
 
 # Remove all untracked and ignored files/directories
+# CAUTION: This will delete venv, .python-version, etc.
 clean-all:
 	@git clean -fx .
 
 build:
 	@python -m build .
 
-# Remove ignored files/directories,
-# i.e. build files/dirs, and re-build them
+# Remove build directories and re-build
 rebuild:
-	@git clean -fX .
+	@rm -rf dist
 	@python -m build .
