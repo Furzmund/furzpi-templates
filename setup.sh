@@ -11,6 +11,9 @@ echo "
 
 echo "Remove template git repo"
 ./.remove_git.sh
+if [ $? != 0 ]; then
+    exit 0
+fi
 
 echo "
 Initialize new git repo"
