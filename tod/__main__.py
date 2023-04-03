@@ -3,8 +3,8 @@ from __future__ import annotations
 import sys
 from datetime import datetime
 
-from tools.msg import get_time_of_day
-from tools.msg import message
+from .tools.msg import get_time_of_day
+from .tools.msg import message
 
 
 def main():

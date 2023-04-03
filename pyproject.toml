@@ -1,11 +1,10 @@
 [build-system]
-requires = ["setuptools >= 51.0.0"]
+requires = ["setuptools >= 60.0.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "Hi"
-version = "0.0.1"
-description = "Just saying hi"
+name = "tod"
+description = "Time of Day"
 readme = "README.md"
 license = {file = "LICENSE"}
 authors = [
@@ -17,6 +16,7 @@ classifiers = [
   "Programming Language :: Python"
 ]
 requires-python = ">=3.8"
+dynamic = ["version"]
 dependencies = []
 [project.optional-dependencies]
 dev = [
@@ -30,6 +30,9 @@ dev = [
     "vulture==2.7.0",
 ]
 
+[tool.setuptools.dynamic]
+version = {attr = "tod.__VERSION__"}
+
 [project.urls]
 homepage = "https://example.com"
 documentation = "https://readthedocs.org"
@@ -37,4 +40,4 @@ repository = "https://github.com/me/project"
 changelog = "https://github.com/me/project/blob/master/CHANGELOG.md"
 
 [project.scripts]
-hi = "main:main"
+tod = "tod.__main__:main"

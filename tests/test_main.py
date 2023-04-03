@@ -1,12 +1,11 @@
 from __future__ import annotations
-from unittest import mock
 
 import pytest
 from faker import Faker
 
-from src.tools.msg import in_range
-from src.tools.msg import get_time_of_day
-from src.tools.msg import message
+from tod.tools.msg import get_time_of_day
+from tod.tools.msg import in_range
+from tod.tools.msg import message
 
 
 generator = Faker()
@@ -21,9 +20,9 @@ generator = Faker()
     ],
 )
 def test_message(msg, capsys):
-        message(msg)
-        captured = capsys.readouterr()
-        assert captured.out == msg + "\n"
+    message(msg)
+    captured = capsys.readouterr()
+    assert captured.out == msg + "\n"
 
 
 @pytest.mark.parametrize(
@@ -48,11 +47,12 @@ def test_in_range(min, max, val, expected):
         (10, 5, 0),
         (123, -234, 0),
         (10, 9, 0),
-    ]
+    ],
 )
 def test_in_range_bad_input(min, max, val):
     with pytest.raises(AssertionError):
         result = in_range(min, max, val)
+        assert result == "fart"
 
 
 @pytest.mark.parametrize(
